@@ -1,0 +1,15 @@
+<% unless @article.pictures.empty? %>
+  <p>画像です</p>
+  <ul>
+    <% @article.pictures.each do |pic| %>
+      <li id="picture_<%= pic.id %>">
+        <%= image_tag pic.image.url %>
+        :medium<br>
+        <%= image_tag pic.image.url(:medium) %><br>
+
+        :square<br>
+        <%= image_tag pic.image.url(:square) %><br>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
